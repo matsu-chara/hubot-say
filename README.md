@@ -1,4 +1,4 @@
-# say-hubot
+# hubot-say
 
 * speak every statement by say command (say command is needed. so this hubot-script can use only mac)
 
