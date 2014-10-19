@@ -19,6 +19,9 @@ export SAY_HUBOT_JAPANESE_VOICE="Otoya"
 
 * add "hubot-say" into external-scripts.json
 
+### execSync compile failed
+
+this scripts use `[execSync](https://github.com/mgutz/execSync)`. if `execSync native compile failed` when `npm install`. you should check availability of python. you can also use [node-gyp](https://github.com/TooTallNate/node-gyp#installation) for build execSync(`npm install -g node-gyp`)
 
 #### memo
 
