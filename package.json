@@ -1,0 +1,27 @@
+{
+  "name": "hubot-say",
+  "version": "1.0.0",
+  "description": "speak every text by say command",
+  "main": "index.coffee",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/matsu-chara/hubot-say.git"
+  },
+  "keywords": [
+    "hubot",
+    "say"
+  ],
+  "dependencies": {
+    "execSync": "^1.0.2",
+    "shell-escape": "^0.1.0"
+  },
+  "author": "matsu_chara",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/matsu-chara/hubot-say/issues"
+  },
+  "homepage": "https://github.com/matsu-chara/hubot-say"
+}
