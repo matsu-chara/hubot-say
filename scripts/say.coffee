@@ -6,7 +6,8 @@ shellescape = require 'shell-escape'
 unescapeHtml = require 'unescape-html'
 
 class SayMessage
-  constructor: (@user, text) ->
+  constructor: (user, text, isTwitter) ->
+    @user = if isTwitter then "@#{user}" else user
     @text = unescapeHtml text
     @context =
       if @isAsciiMessage() then new EnglishContext else new JapaneseContext
@@ -25,7 +26,7 @@ class SayMessage
 
   getSayText: (isRaw) =>
     text = if isRaw then @text else @context.replace(@text)
-    return "@#{@user}, #{text}"
+    return "#{@user}, #{text}"
 
 class LanguageContext
   replace: (text)->
@@ -61,6 +62,7 @@ module.exports = (robot) ->
     user = msg.envelope.message.user.name
     text = msg.envelope.message.text
 
-    sm = new SayMessage user, text
+    isTwitter = if process.env.HUBOT_TWITTER_KEY then true else false
+    sm = new SayMessage user, text, isTwitter
     sm.outputLog()
     sm.say()

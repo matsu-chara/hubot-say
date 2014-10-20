@@ -1,6 +1,6 @@
 {
   "name": "hubot-say",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "speak every text by say command",
   "main": "index.coffee",
   "scripts": {
