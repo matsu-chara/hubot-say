@@ -3,9 +3,11 @@
 
 sh = require 'execSync'
 shellescape = require 'shell-escape'
+unescapeHtml = require 'unescape-html'
 
 class SayMessage
-  constructor: (@user, @text) ->
+  constructor: (@user, text) ->
+    @text = unescapeHtml text
     @context =
       if @isAsciiMessage() then new EnglishContext else new JapaneseContext
 

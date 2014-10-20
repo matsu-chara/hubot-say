@@ -1,6 +1,6 @@
 {
   "name": "hubot-say",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "speak every text by say command",
   "main": "index.coffee",
   "scripts": {
@@ -16,7 +16,8 @@
   ],
   "dependencies": {
     "execSync": "^1.0.2",
-    "shell-escape": "^0.1.0"
+    "shell-escape": "^0.1.0",
+    "unescape-html": "^1.0.0"
   },
   "author": "matsu_chara",
   "license": "ISC",
