@@ -34,7 +34,7 @@ class LanguageContext
 
   cutUrl: (text) ->
     return text
-            .replace(/http[s]*:\/\/.+\s*(.*)$/g, '$1')
+            .replace(/http[s]*:\/\/.+[\s　]*(.*)$/g, '$1')
 
   getVoice: () ->
     return "Alex"
