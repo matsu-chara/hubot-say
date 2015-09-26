@@ -1,7 +1,7 @@
 # Description:
 #
 
-sh = require 'execSync'
+execSync = require('child_process').execSync
 shellescape = require 'shell-escape'
 unescapeHtml = require 'unescape-html'
 
@@ -12,12 +12,11 @@ class SayMessage
       if @isAsciiMessage() then new EnglishContext else new JapaneseContext
 
   isAsciiMessage: () =>
-    code = sh.run "echo #{shellescape [@text]}" +
-                  " | nkf -g | xargs -I {} test {} = ASCII"
-    return if code == 0 then true else false
+    charSet = (execSync "echo #{shellescape [@text]} | nkf -g").toString()
+    return if charSet == "ASCII" then true else false
 
   say: () =>
-    sh.run "say -v #{shellescape [@context.getVoice()]}" +
+    execSync "say -v #{shellescape [@context.getVoice()]}" +
            " #{shellescape [@getSayText()]}"
 
   outputLog: () =>
